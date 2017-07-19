@@ -66,6 +66,40 @@
 // console.log("This object has #" + count + " keys")
 
 
+//4. Write a JavaScript program to display the reading status (i.e. display book name, author name and reading status) of the following books.
+var library = [ 
+   {
+       author: 'Bill Gates',
+       title: 'The Road Ahead',
+       readingStatus: true
+   },
+   {
+       author: 'Steve Jobs',
+       title: 'Walter Isaacson',
+       readingStatus: true
+   },
+   {
+       author: 'Suzanne Collins',
+       title:  'Mockingjay: The Final Book of The Hunger Games', 
+       readingStatus: false
+   }];
+
+
+   var readBooks = "I already read:" + "\n";
+   var noneReadBooks = "I haven't read:" + "\n";
+   var statusYes = ""
+   var statusNo = ""
+
+for(var i = 0; i < library.length; i++) {
+  if(library[i].readingStatus){
+    statusYes += "'" + library[i].title + "' by " + library[i].author + "\n";
+  } else {
+    statusNo += "'" + library[i].title + "' by " + library[i].author + "\n";
+  }
+}statusYes
+console.log(readBooks + statusYes)
+console.log(noneReadBooks + statusNo)
+
 </script>
 
 
