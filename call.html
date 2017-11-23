@@ -59,7 +59,7 @@ var animals = [
   {species: "Dinosaur", name: "T-Rex"},
  ]
 
-animals.__proto__.container = function(i){this.consoleLog = console.log("#" + i + ' ' + this.species + ": " + this.name)}
+animals.__proto__.container = function(i){console.log("#" + i + ' ' + this.species + ": " + this.name)}
 
 for(var i = 0; i < animals.length; i++) {
   animals.container.call(animals[i], i)
