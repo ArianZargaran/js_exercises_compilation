@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>my Try</title>
+</head>
+<body>
+  <p><em>Psst: have a look at the JavaScript Console</em> 💁</p>  
+</body>
+
+<script>
+
+  function Person(name) {
+    this.name = name;
+  }
+
+Person.prototype.sayYourName = function(){console.log("My name is " + this.name)}
+
+var arr = []
+
+var ari = arr.push(new Person("Ari"))
+var javi = arr.push(new Person("Javi Porrero"))
+
+// for(var i = 0; i < arr.length; i++){
+//   arr[i].sayYourName()
+// }
+
+var i = 0
+while(i < arr.length) {
+  arr[i].sayYourName()
+  i++
+}
+
+
+
+</script>
+
+
+</body>
+</html>
