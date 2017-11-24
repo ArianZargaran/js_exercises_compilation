@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Apply()</title>
+</head>
+
+<style>
+
+  .container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .item {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+    border: 1px solid black;
+  }
+
+</style>
+
+<body>
+  <p><em>Psst: have a look at the JavaScript Console</em> &#9824;</p>  
+
+  <div id="container" class="container">
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+  </div>
+
+</body>
+
+<script>
+
+
+let container = document.getElementById('container')
+container.addEventListener('mouseover', changeColor)
+
+function changeColor(event){
+  var x = event.target;
+  let randomColor = '#' + Math.random().toString(16).slice(-6)
+  if(x != container) {x.style.backgroundColor = randomColor}
+}
+
+</script>
+
+
+</body>
+</html>
