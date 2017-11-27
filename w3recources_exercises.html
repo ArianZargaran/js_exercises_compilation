@@ -67,38 +67,62 @@
 
 
 //4. Write a JavaScript program to display the reading status (i.e. display book name, author name and reading status) of the following books.
-var library = [ 
-   {
-       author: 'Bill Gates',
-       title: 'The Road Ahead',
-       readingStatus: true
-   },
-   {
-       author: 'Steve Jobs',
-       title: 'Walter Isaacson',
-       readingStatus: true
-   },
-   {
-       author: 'Suzanne Collins',
-       title:  'Mockingjay: The Final Book of The Hunger Games', 
-       readingStatus: false
-   }];
+// var library = [ 
+//    {
+//        author: 'Bill Gates',
+//        title: 'The Road Ahead',
+//        readingStatus: true
+//    },
+//    {
+//        author: 'Steve Jobs',
+//        title: 'Walter Isaacson',
+//        readingStatus: true
+//    },
+//    {
+//        author: 'Suzanne Collins',
+//        title:  'Mockingjay: The Final Book of The Hunger Games', 
+//        readingStatus: false
+//    }];
 
 
-   var readBooks = "I already read:" + "\n";
-   var noneReadBooks = "I haven't read:" + "\n";
-   var statusYes = ""
-   var statusNo = ""
+//    var readBooks = "I already read:" + "\n";
+//    var noneReadBooks = "I haven't read:" + "\n";
+//    var statusYes = ""
+//    var statusNo = ""
 
-for(var i = 0; i < library.length; i++) {
-  if(library[i].readingStatus){
-    statusYes += "'" + library[i].title + "' by " + library[i].author + "\n";
-  } else {
-    statusNo += "'" + library[i].title + "' by " + library[i].author + "\n";
-  }
-}statusYes
-console.log(readBooks + statusYes)
-console.log(noneReadBooks + statusNo)
+// for(var i = 0; i < library.length; i++) {
+//   if(library[i].readingStatus){
+//     statusYes += "'" + library[i].title + "' by " + library[i].author + "\n";
+//   } else {
+//     statusNo += "'" + library[i].title + "' by " + library[i].author + "\n";
+//   }
+// }statusYes
+// console.log(readBooks + statusYes)
+// console.log(noneReadBooks + statusNo)
+
+
+// 5. Write a JavaScript program to get the volume of a Cylinder with four decimal places using object classes. Go to the editor
+// Volume of a cylinder : V = πr2h
+// where r is the radius and h is the height of the cylinder.
+
+function Cylinder(radius, height) {
+  this.radius = radius;
+  this.height = height;
+}
+
+Cylinder.prototype.volumeCalc = function (radius, height){console.log((Math.PI * (this.radius ** 2) * this.height).toFixed(4))}
+
+let small = {
+  radius : 4,
+  height : 3,
+}
+
+var medium = new Cylinder(5,6)
+var large = new Cylinder(40, 30)
+
+large.volumeCalc()
+medium.volumeCalc()
+Cylinder.prototype.volumeCalc.call(small)
 
 </script>
 
