@@ -105,24 +105,53 @@
 // Volume of a cylinder : V = πr2h
 // where r is the radius and h is the height of the cylinder.
 
-function Cylinder(radius, height) {
-  this.radius = radius;
-  this.height = height;
+// function Cylinder(radius, height) {
+//   this.radius = radius;
+//   this.height = height;
+// }
+
+// Cylinder.prototype.volumeCalc = function (radius, height){console.log((Math.PI * (this.radius ** 2) * this.height).toFixed(4))}
+
+// let small = {
+//   radius : 4,
+//   height : 3,
+// }
+
+// var medium = new Cylinder(5,6)
+// var large = new Cylinder(40, 30)
+
+// large.volumeCalc()
+// medium.volumeCalc()
+// Cylinder.prototype.volumeCalc.call(small)
+
+// 6. Write a Bubble Sort algorithm in JavaScript.
+// Note : Bubble sort is a simple sorting algorithm that works by repeatedly stepping through the list to be sorted,
+// Sample Data: [6,4,0, 3,-2,1]
+// Expected Output : [-2, 0, 1, 3, 4, 6]
+
+Array.prototype.bubbleSort_algo = function()
+{
+  var is_sorted = false;
+  while(!is_sorted)
+  {
+    is_sorted = true;
+    for(var n = 0; n < this.length-1; n++)
+    {
+      if(this[n] > this[n+1]) 
+      {
+        var x = this[n+1];
+        this[n+1] = this[n];
+        this[n] = x;
+        is_sorted = false;
+      }
+    }
+  }
+  return this
 }
 
-Cylinder.prototype.volumeCalc = function (radius, height){console.log((Math.PI * (this.radius ** 2) * this.height).toFixed(4))}
+var mine = new Array(6,4,0, 3,-2,1)
 
-let small = {
-  radius : 4,
-  height : 3,
-}
-
-var medium = new Cylinder(5,6)
-var large = new Cylinder(40, 30)
-
-large.volumeCalc()
-medium.volumeCalc()
-Cylinder.prototype.volumeCalc.call(small)
+console.log(mine.bubbleSort_algo())
 
 </script>
 
