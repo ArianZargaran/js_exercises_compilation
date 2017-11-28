@@ -17,56 +17,115 @@
 
 <script>
 
-//1. Write a JavaScript program to list the properties of a JavaScript object. Go to the editor
-// var mainObj = function() {}
-
-// mainObj.keysList = function(a, b, c){
-//   var first = parseFloat(a)
-//   var second = parseFloat(b)
-//   var third = parseFloat(c)
-
-//   var properties = Object.getOwnPropertyNames(this);
-//   console.log(properties.join(', '));
-//   console.log(this.name + ' ' + this.sclass + ' ' + this.rollno);
-//   console.log(this.first + ' ' + this.second + ' ' + this.third)}
-
-// var student = { 
-// name : "David Rayy", 
-// sclass : "VI", 
-// rollno : 12,
-// };
-
-// var arrOfKeys = Object.getOwnPropertyNames(student)
-
-// mainObj.keysList.call(student, arrOfKeys);
-
-
-//2. Write a JavaScript program to delete the rollno property from the following object. Also print the object before or after deleting the property. 
+// //1. Write a JavaScript program to list the properties of a JavaScript object.
 // var student = { 
 // name : "David Rayy", 
 // sclass : "VI", 
 // rollno : 12 };
 
-// var removing = function(){
-//   console.log(student)
-//   delete this.rollno
-//   console.log(student)
-// }
+// var listProperties = function listProperties(obj) 
+//   {
+//   var propArr = []
+//   for(key in obj)
+//     {
+//     propArr.push(key)
+//     }
+//     console.log(propArr)
+//   }
+// listProperties(student);
 
-// removing.call(student)
+// //1. Write a JavaScript program to list the properties of a JavaScript object.
+// // var student = { 
+// // name : "David Rayy", 
+// // sclass : "VI", 
+// // rollno : 12 };
 
-// 3. Write a JavaScript program to get the length of an JavaScript object. Go to the editor
+// var enlistProps = function enlistProps(obj)
+//   {
+//   var list = ""; 
+//   for(key in obj)
+//     {
+//     list += key + ', '
+//     }
+//     console.log(list.slice(0,-2))
+//   }
+
+// enlistProps(student);
+
+
+
+                            // // // // // //--X--\\ \\ \\ \\ \\ \\
+
+// // 2. Write a JavaScript program to delete the rollno property from the following object. Also print the object before or after deleting the property.
+// // Sample object:
+
 // var student = { 
 // name : "David Rayy", 
 // sclass : "VI", 
-// rollno : 12 }; 
+// rollno : 12 };
 
-// var count = 0;
-// for(keys in student){count++}
-// console.log("This object has #" + count + " keys")
+// const deleteRollno = function deleteRollno(obj){
+//  console.log(obj);
+//   for(key in obj){
+//     if(key === "rollno") {
+//       delete obj.rollno
+//     }
+//   }
+//   console.log(obj)
+// }
+
+// deleteRollno(student)
+
+// // 2. Write a JavaScript program to delete the rollno property from the following object. Also print the object before or after deleting the property.
+// // Sample object:
+
+// var student = { 
+// name : "David Rayy", 
+// sclass : "VI", 
+// rollno : 12 };
 
 
-//4. Write a JavaScript program to display the reading status (i.e. display book name, author name and reading status) of the following books.
+// Object.prototype.deleteRollno = function(obj){
+//  console.log(obj);
+//   for(key in obj){
+//     if(key === "rollno") {
+//       delete obj.rollno
+//     }
+//   }
+//   return obj
+// }
+
+// console.log(deleteRollno(student))
+// console.log(Object.deleteRollno(student))
+// console.log(Object.prototype.deleteRollno(student))
+
+                            // // // // // //--X--\\ \\ \\ \\ \\ \\
+
+// // 3. Write a JavaScript program to get the length of an JavaScript object. Go to the editor
+// // Sample object : 
+
+// var student = { 
+//   name : "David Rayy", 
+//   sclass : "VI", 
+//   rollno : 12
+//   }; 
+
+// var jsLength = function jsLength(obj)
+//   {
+//   var count = 0;
+//   for(key in obj)
+//     {
+//     count++
+//     }
+//     console.log(count)
+//   }
+
+// jsLength(student);
+
+                            // // // // // //--X--\\ \\ \\ \\ \\ \\
+
+// 4. Write a JavaScript program to display the reading status (i.e. display book name, author name and reading status) of the following books.
+
 // var library = [ 
 //    {
 //        author: 'Bill Gates',
@@ -84,74 +143,114 @@
 //        readingStatus: false
 //    }];
 
-
-//    var readBooks = "I already read:" + "\n";
-//    var noneReadBooks = "I haven't read:" + "\n";
-//    var statusYes = ""
-//    var statusNo = ""
-
-// for(var i = 0; i < library.length; i++) {
-//   if(library[i].readingStatus){
-//     statusYes += "'" + library[i].title + "' by " + library[i].author + "\n";
-//   } else {
-//     statusNo += "'" + library[i].title + "' by " + library[i].author + "\n";
+// Array.prototype.readingStatus = function(arr) {
+//   const alreadyRead = "I already read:" + "\n";
+//   const noneRead = "I need to read:" + "\n";
+//   var readingOk = "";
+//   var readingNo = "";  
+//   for(var i = 0; i < arr.length; i++){
+//     if (arr[i].readingStatus) {
+//       readingOk += arr[i].title + "," + " by " + arr[i].author + "\n";
+//     } else {
+//       readingNo += arr[i].title + "," + " by " + arr[i].author + "\n";
+//     }
 //   }
-// }statusYes
-// console.log(readBooks + statusYes)
-// console.log(noneReadBooks + statusNo)
+//   return alreadyRead + readingOk.trim() + "\n\n" + noneRead + readingNo.trim()
+// }
 
+// console.log(Array.prototype.readingStatus(library));
 
-// 5. Write a JavaScript program to get the volume of a Cylinder with four decimal places using object classes. Go to the editor
+// 4. Write a JavaScript program to display the reading status (i.e. display book name, author name and reading status) of the following books.
+
+// var library = [ 
+//    {
+//        author: 'Bill Gates',
+//        title: 'The Road Ahead',
+//        readingStatus: true
+//    },
+//    {
+//        author: 'Steve Jobs',
+//        title: 'Walter Isaacson',
+//        readingStatus: true
+//    },
+//    {
+//        author: 'Suzanne Collins',
+//        title:  'Mockingjay: The Final Book of The Hunger Games', 
+//        readingStatus: false
+//    }];
+
+// function readingStatus(arr) {
+//   const alreadyRead = "I already read:" + "\n";
+//   const noneRead = "I need to read:" + "\n";
+//   var readingOk = "";
+//   var readingNo = "";  
+//   for(var i = 0; i < arr.length; i++){
+//     if (arr[i].readingStatus) {
+//       readingOk += arr[i].title + "," + " by " + arr[i].author + "\n";
+//     } else {
+//       readingNo += arr[i].title + "," + " by " + arr[i].author + "\n";
+//     }
+//   }
+//   console.log(alreadyRead + readingOk.trim())
+//   console.log(noneRead + readingNo.trim())
+// }
+
+// readingStatus(library)
+
+                            // // // // // //--X--\\ \\ \\ \\ \\ \\
+
+// 5. Write a JavaScript program to get the volume of a Cylinder with four decimal places using object classes.
 // Volume of a cylinder : V = πr2h
 // where r is the radius and h is the height of the cylinder.
 
-// function Cylinder(radius, height) {
+// function Cylinder(radius, height){
 //   this.radius = radius;
 //   this.height = height;
 // }
 
-// Cylinder.prototype.volumeCalc = function (radius, height){console.log((Math.PI * (this.radius ** 2) * this.height).toFixed(4))}
+// Cylinder.prototype.volumeCalc = function(){console.log((Math.PI * (this.radius ** 2) * this.height).toFixed(4))}
 
-// let small = {
-//   radius : 4,
-//   height : 3,
+// let small = new Cylinder(4,6)
+// small.volumeCalc()
+
+// let big = new Cylinder(14,16)
+// big.volumeCalc()
+
+// let medium = {
+//   radius: 9,
+//   height: 11,
 // }
+// Cylinder.prototype.volumeCalc.apply(medium)
+  
+                            // // // // // //--X--\\ \\ \\ \\ \\ \\
 
-// var medium = new Cylinder(5,6)
-// var large = new Cylinder(40, 30)
-
-// large.volumeCalc()
-// medium.volumeCalc()
-// Cylinder.prototype.volumeCalc.call(small)
-
-// 6. Write a Bubble Sort algorithm in JavaScript.
-// Note : Bubble sort is a simple sorting algorithm that works by repeatedly stepping through the list to be sorted,
+// 6. Write a Bubble Sort algorithm in JavaScript. Go to the editor
+// Note : Bubble sort is a simple sorting algorithm that works by repeatedly stepping through the list to be sorted
 // Sample Data: [6,4,0, 3,-2,1]
 // Expected Output : [-2, 0, 1, 3, 4, 6]
 
-Array.prototype.bubbleSort_algo = function()
-{
-  var is_sorted = false;
-  while(!is_sorted)
-  {
-    is_sorted = true;
-    for(var n = 0; n < this.length-1; n++)
-    {
-      if(this[n] > this[n+1]) 
-      {
-        var x = this[n+1];
-        this[n+1] = this[n];
-        this[n] = x;
-        is_sorted = false;
-      }
-    }
-  }
-  return this
-}
+// Array.prototype.sortingAlg = function sortingAlg(arr)
+// {
+//   var isSorted = false;
+//   while(!isSorted)
+//   {
+//     isSorted = true;
+//     for(var n = 0; n < arr.length - 1; n++) 
+//     {
+//       if(arr[n+1] < arr[n])
+//       {
+//         var x = arr[n+1];
+//         arr[n+1] = arr[n];
+//         arr[n] = x
+//         isSorted = false;
+//       } 
+//     }
+//   }
+//   return arr
+// }
 
-var mine = new Array(6,4,0, 3,-2,1)
-
-console.log(mine.bubbleSort_algo())
+// var myArr = [6,4,0, 3,-2,1]
+// console.log(Array.prototype.sortingAlg(myArr))
 
 </script>
 
