@@ -12,7 +12,9 @@
 <body>
   <p><em>Psst: have a look at the JavaScript Console</em> &#128514;</p>
   <a href="https://www.w3resource.com/javascript-exercises/javascript-object-exercises.php" target="_blank">https://www.w3resource.com/javascript-exercises/javascript-object-exercises.php</a> 
-  
+      
+  <br><br>
+ <div id="container"></div>
 </body>
 
 <script>
@@ -308,6 +310,24 @@
 // } 
 
 // console.log(ArrayConst.prototype.sortingAlgo.call(yourObj)) ß
+
+// var clock = function(){
+//   let now = new Date()
+//   let hours = ampm(now.getHours())
+//   let minutes = round(now.getMinutes())
+//   let seconds = round(now.getSeconds())
+//   let weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+//   let result = hours + " : " + minutes + " : " + seconds
+//   let dateNum = now.getDay()
+
+//   function dayName(dateNum) {return weekday[dateNum]}; let day = dayName(dateNum)
+//   function round(minOrSec){return minOrSec > 9 ? "" + minOrSec: "0" + minOrSec}
+//   function ampm(hour){return hour < 12 ? hour + " AM" : (hour  - 12) + " PM"}
+
+//   document.getElementById("container").innerHTML = "Today is: " + day + "<br/>" + result
+
+//   setInterval(clock, 1000)
+// }; clock()
 
 </script>
 
